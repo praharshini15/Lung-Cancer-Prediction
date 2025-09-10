@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Deepfake Detection Using CNN-GAN Model</h2>
+
+<div>
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="videoUpload" class="upload-label">
+            Choose a video file...
+        </label>
+        <input type="file" name="file" id="videoUpload" accept="video/*">
+    </form>
+
+    <!-- Video Preview Section -->
+    <div class="video-section" style="display:none;">
+        <div class="video-preview">
+            <video id="videoPreview" width="320" height="240" controls></video>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary btn-lg" id="btn-predict">Predict!</button>
+        </div>
+    </div>
+
+    <!-- Loading Animation -->
+    <div class="loader" style="display:none;">
+        <img src="loader.gif" alt="Loading...">
+    </div>
+
+    <!-- Prediction Result -->
+    <h3 id="result" style="display:none;">
+        <span></span>
+    </h3>
+
+</div>
+
+{% endblock %}
